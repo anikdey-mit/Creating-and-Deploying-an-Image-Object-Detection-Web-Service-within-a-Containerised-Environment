@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iweblens-deployment
+  labels:
+    app: iweblens
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iweblens
+  template:
+    metadata:
+      labels:
+        app: iweblens
+    spec:
+      containers:
+      - name: assignment1
+        image: cloud
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: "0.5"
+          requests:
+            cpu: "0.5"
