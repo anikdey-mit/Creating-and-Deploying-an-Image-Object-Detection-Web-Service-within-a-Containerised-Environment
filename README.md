@@ -1,1 +1,3 @@
 # Creating-and-Deploying-an-Image-Object-Detection-Web-Service-within-a-Containerised-Environment
+Image Object Detection Web Service within a Containerised Environment. Here Yolo and OpenCV is used to process images and detect objects. This project has Five parts.
+* Creating a web service: A RESTful API was developed that allows clients to upload images to the server. Flask was used to create web service. Yolo and OpenCV was used to detect objects. Server returned objects in JSON format. As this project was done in Necture cloud, the resouces were limited. So, I used yolov3-tiny. I downloaded yolov3-tiny from URL: https://pjreddie.com/media/files/yolov3-tiny.weights 
