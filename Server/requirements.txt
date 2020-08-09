@@ -1,0 +1,8 @@
+flask
+argparse
+numpy
+Pillow
+six
+opencv-contrib-python-headless==4.2.0.34
+pybase64
+jsonpickle

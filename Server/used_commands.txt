@@ -1,0 +1,28 @@
+docker build -t cloud . (to create docker image from Dockerfile)
+
+docker run -d -p 5000:5000 --name assignment1 cloud (to create container service from docker image)
+
+kind create cluster --config config.yaml --name iweblens (to create cluster)
+
+kind load docker-image cloud --name iweblens (to load docker image to cluster)
+
+kubectl get nodes -o wide (to view node status)
+
+kubectl cluster-info --context kind-iweblens (to get cluster info)
+
+kubectl apply -f deployment.yml (to create deployment)
+
+kubectl get pods -o wide (to view pods)
+
+kubectl get deployments -o wide (to view deployments)
+
+kubectl scale deployment iweblens-deployment --replicas=2 (scale to 2)
+kubectl scale deployment iweblens-deployment --replicas=3 (scale to 3)
+
+kubectl logs <podname> (to check pods)
+
+kubectl apply -f service.yml (to create service)
+
+kubectl get svc-o wide (to view services)
+
+python3 iWebLens_client.py inputfolder http://<ip-address>:80/objectdetection/ <thread number> (to access from external server)

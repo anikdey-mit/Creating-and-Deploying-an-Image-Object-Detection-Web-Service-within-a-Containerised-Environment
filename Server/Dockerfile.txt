@@ -1,0 +1,11 @@
+FROM python:3.8-slim-buster
+RUN apt-get update -y && apt-get install -y libglib2.0-dev
+WORKDIR /code
+ADD webserver.py /code
+COPY requirements.txt requirements.txt
+COPY yolov3-tiny.cfg yolov3-tiny.cfg
+COPY yolov3-tiny.weights yolov3-tiny.weights
+COPY coco.names coco.names
+RUN pip3 install --upgrade pip
+RUN pip3 install -r requirements.txt
+CMD ["python3", "/code/webserver.py"]
